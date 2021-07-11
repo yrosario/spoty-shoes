@@ -12,7 +12,7 @@
 		<div id="content">
 		
 		<!-- add new button: Add Product -->
-		<input type="button" value="Add Customer"
+		<input type="button" value="Add Shoe"
 				onclick="window.location.href='showFormForAdd'"
 		/>
 		
@@ -31,8 +31,8 @@
 				<c:forEach var="tempProduct" items="${products}">
 				
 					<!-- construct an "update" link with product id -->
-					<c:url var="updateLink" value="/customer/showFormForUpdate">
-						<c:param name="customerId" value="${tempProduct.id}" />
+					<c:url var="updateLink" value="/shoe/showFormForUpdate">
+						<c:param name="productId" value="${tempProduct.id}" />
 					</c:url>
 					
 					

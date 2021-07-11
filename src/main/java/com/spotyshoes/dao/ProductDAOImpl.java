@@ -34,14 +34,26 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public void saveProduct(Product product) {
-		// TODO Auto-generated method stub
+		
+		//get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//save/update the product
+		currentSession.saveOrUpdate(product);
 
 	}
 
 	@Override
 	public Product getProduct(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		//get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//get product base on the product id
+		Product product = currentSession.get(Product.class, id);
+		
+		return product;
+
 	}
 
 }
